@@ -1,5 +1,4 @@
 extern crate envy;
-
 extern crate toml;
 extern crate dotenv;
 extern crate num_cpus;
@@ -45,5 +44,13 @@ pub fn default_db_url() -> String {
                 None => panic!(format!("{} must be defined", DB_URL))
             }
         }
+    }
+}
+
+pub fn default_config_file() -> String {
+    match std::env::var("CONFIG_FILE") {
+        Ok(s) => s,
+        Err(std::env::VarError::NotPresent) => String::from("config.toml"),
+        Err(std::env::VarError::NotUnicode(e)) => panic!(e),
     }
 }
