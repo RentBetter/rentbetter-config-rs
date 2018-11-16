@@ -1,6 +1,6 @@
 [package]
 name = "rentbetter-config-rs"
-version = "0.0.1"
+version = "0.0.2"
 authors = ["Samuel Marks <samuel@offscale.io>"]
 license = "Apache-2.0"
 
@@ -10,3 +10,4 @@ toml = "0.4.8"
 # phf = "0.7.23"
 # serde_derive = "1.0.80"
 envy = "0.3.3"
+num_cpus = "1.8.0"
